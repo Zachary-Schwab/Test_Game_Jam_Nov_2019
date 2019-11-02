@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
     <Compile Include="Assets\Scripts\VacuumScript.cs" />
+    <Compile Include="Assets\Scripts\WinState.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/zachary.schwab/source/repos/Test_Game_Jam_Nov_2019/Game/Game_Jam_Nov_2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

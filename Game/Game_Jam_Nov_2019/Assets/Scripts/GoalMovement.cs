@@ -79,7 +79,7 @@ public class GoalMovement : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("trying to rotatae");
+                    //Debug.Log("trying to rotatae");
                     this.transform.RotateAround(new Vector3((minX + maxX)/2, startPos.y, startPos.z), Vector3.forward, rotationSpeed * Time.deltaTime);
                 }
                 break;
