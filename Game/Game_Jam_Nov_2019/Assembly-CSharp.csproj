@@ -53,14 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AmmoScript.cs" />
-     <Compile Include="Assets\Ball_Goal_Collide.cs" />
      <Compile Include="Assets\Scripts\AimingScript.cs" />
+     <Compile Include="Assets\Scripts\AmmoScript.cs" />
+     <Compile Include="Assets\Scripts\AmmoTextScript.cs" />
+     <Compile Include="Assets\Scripts\Ball_Goal_Collide.cs" />
      <Compile Include="Assets\Scripts\DropBalls.cs" />
      <Compile Include="Assets\Scripts\GoalMovement.cs" />
      <Compile Include="Assets\Scripts\MovementScript.cs" />
      <Compile Include="Assets\Scripts\PlayerTurret.cs" />
      <Compile Include="Assets\Scripts\ProjectileScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\VacuumScript.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/dante.xystus/Desktop/git/Test_Game_Jam_Nov_2019/Game/Game_Jam_Nov_2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

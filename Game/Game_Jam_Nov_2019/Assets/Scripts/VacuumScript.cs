@@ -17,7 +17,7 @@ public class VacuumScript : MonoBehaviour
     void Start()
     {
         currentCooldown = cooldown;
-        ammoScript = GameObject.Find("Firing Part").GetComponent<AmmoScript>();
+        ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
     }
 
     // Update is called once per frame
