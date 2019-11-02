@@ -24,7 +24,8 @@ public class DropBalls : MonoBehaviour
         {
             float xSpawnPos = Random.Range(dropZoneDimensions.x, dropZoneDimensions.y);
             float zSpawnPos = Random.Range(dropZoneDimensions.z, dropZoneDimensions.w);
-            Instantiate(ball_model, new Vector3(xSpawnPos, spawnHeight, zSpawnPos), Quaternion.identity);
+            GameObject ball = Instantiate(ball_model, new Vector3(xSpawnPos, spawnHeight, zSpawnPos), Quaternion.identity);
+            ball.GetComponent<Rigidbody>().velocity = Vector3.down * 20f;
         }
     }
 }
