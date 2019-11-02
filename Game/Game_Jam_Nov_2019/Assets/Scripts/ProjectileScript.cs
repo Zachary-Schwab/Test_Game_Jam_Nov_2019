@@ -31,8 +31,5 @@ public class ProjectileScript : MonoBehaviour
         }
     }
 
-    void onCollisionEnter(Collision col)
-    {
-        
-    }
+    
 }
