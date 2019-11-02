@@ -15,7 +15,11 @@ GameObject:
   - component: {fileID: 7188369033261813091}
   m_Layer: 0
   m_Name: Ball
+<<<<<<< HEAD:Game/Game_Jam_Nov_2019/Assets/Prefabs/Ball.prefab
   m_TagString: ball
+=======
+  m_TagString: Ball
+>>>>>>> d6872989636613d30ffd99a410c1204fc868c3f7:Game/Game_Jam_Nov_2019/Assets/Models/Temps/Ball.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

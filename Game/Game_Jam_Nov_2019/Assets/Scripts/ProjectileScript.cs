@@ -14,7 +14,7 @@ public class ProjectileScript : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _rb.velocity = _projectileSpeed * transform.right;
+        _rb.velocity = _projectileSpeed * transform.forward;
         _currLifespan = _maxLifespan;
     }
 
@@ -31,8 +31,5 @@ public class ProjectileScript : MonoBehaviour
         }
     }
 
-    void onCollisionEnter(Collision col)
-    {
-        
-    }
+    
 }

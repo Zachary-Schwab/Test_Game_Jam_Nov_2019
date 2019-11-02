@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - ball
+=======
+  - Ball
+>>>>>>> d6872989636613d30ffd99a410c1204fc868c3f7
   layers:
   - Default
   - TransparentFX

@@ -16,11 +16,14 @@ public class AimingScript : MonoBehaviour
 
     public GameObject _projectilePrefab;
 
+    AmmoScript ammoScript;
+
     // Start is called before the first frame update
     void Start()
     {
         _angle = 90 -_angleRange;
         input = transform.rotation.eulerAngles.z;
+        ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
     }
 
     // Update is called once per frame
@@ -60,7 +63,7 @@ public class AimingScript : MonoBehaviour
             }
         }
 
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, input);
+        transform.rotation = Quaternion.Euler(input, transform.rotation.eulerAngles.y, 0f);
     }
     private void TryFire()
     {
@@ -78,9 +81,12 @@ public class AimingScript : MonoBehaviour
 
     private void Fire()
     {
-        float angleToFire = UnityEngine.Random.Range(-_spread, _spread);
-        GameObject proj = Instantiate(_projectilePrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, angleToFire));
-        proj.transform.Translate(transform.localScale.x, 0, 0);
+        if (ammoScript.removeAmmo())
+        {
+            float angleToFire = UnityEngine.Random.Range(-_spread, _spread);
+            GameObject proj = Instantiate(_projectilePrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, angleToFire));
+            proj.transform.Translate(0, 0, transform.localScale.z + 2f);
+        }
     }
 
 }
