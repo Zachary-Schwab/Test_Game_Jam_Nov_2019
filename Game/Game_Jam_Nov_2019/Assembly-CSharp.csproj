@@ -53,7 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AimingScript.cs" />
+     <Compile Include="Assets\Scripts\DropBalls.cs" />
      <Compile Include="Assets\Scripts\MovementScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerTurret.cs" />
+     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/dante.xystus/Desktop/git/Test_Game_Jam_Nov_2019/Game/Game_Jam_Nov_2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
