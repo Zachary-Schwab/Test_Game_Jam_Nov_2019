@@ -24,9 +24,9 @@ public class AimingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _angle = 90 -_angleRange;
+        _angle = 90 - _angleRange;
         input = transform.rotation.eulerAngles.z;
-       // ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
+        // ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
     }
 
     // Update is called once per frame
@@ -46,17 +46,17 @@ public class AimingScript : MonoBehaviour
         bool u = Input.GetKey(turretTurnLeft);
         bool o = Input.GetKey(turretTurnRight);
 
-        if(o)
+        if (o)
         {
             input += (_turningDegreesPerSecond * Time.deltaTime);
 
-            if(input > _angleRange)
+            if (input > _angleRange)
             {
                 input = _angleRange;
             }
 
         }
-        else if(u)
+        else if (u)
         {
             input -= (_turningDegreesPerSecond * Time.deltaTime);
 
@@ -90,6 +90,11 @@ public class AimingScript : MonoBehaviour
             GameObject proj = Instantiate(_projectilePrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, angleToFire));
             proj.transform.Translate(0, 0, transform.localScale.z + 2f);
         }
+    }
+
+    public void EMP(float delay)
+    {
+        _firingCooldown = delay;
     }
 
 }
