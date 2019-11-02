@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 1319618579244400689}
   - component: {fileID: 90309389316265757}
   - component: {fileID: 7188369033261813091}
-  - component: {fileID: 114356767776010726}
   m_Layer: 0
-  m_Name: Ball w. Script
-  m_TagString: Untagged
+  m_Name: Ball
+  m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,17 +108,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.49999997
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114356767776010726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207845826962121285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7debf4968419084f896611598c4e39f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxLifespan: 1
-  _projectileSpeed: 50

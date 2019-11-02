@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball_Goal_Collide : MonoBehaviour
 {
+    public int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,11 @@ public class Ball_Goal_Collide : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.gameObject.tag == "ball")
+        {
+            Destroy(collision.gameObject);
+            score++;
+            this.gameObject.GetComponent<DropBalls>().DropBall();
+        }
     }
 }

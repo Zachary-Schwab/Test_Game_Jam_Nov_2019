@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Ball_Goal_Collide.cs" />
+    <Compile Include="Assets\GoldenBallTargetOnOff.cs" />
     <Compile Include="Assets\Scripts\AimingScript.cs" />
     <Compile Include="Assets\Scripts\DropBalls.cs" />
     <Compile Include="Assets\Scripts\GoalMovement.cs" />

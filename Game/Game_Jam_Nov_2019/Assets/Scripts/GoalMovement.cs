@@ -14,9 +14,11 @@ public class GoalMovement : MonoBehaviour
     public bool goingLeft;
     public bool rotate;
     float c;
+    Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
+        startPos = this.transform.position;
         c = (minX + maxX) / 2;
     }
 
@@ -78,7 +80,7 @@ public class GoalMovement : MonoBehaviour
                 else
                 {
                     Debug.Log("trying to rotatae");
-                    this.transform.RotateAround(new Vector3((minX + maxX)/2,0,0), Vector3.forward, rotationSpeed * Time.deltaTime);
+                    this.transform.RotateAround(new Vector3((minX + maxX)/2, startPos.y, startPos.z), Vector3.forward, rotationSpeed * Time.deltaTime);
                 }
                 break;
         }

@@ -598,15 +598,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c962775c7047797429ee66931ae9f40d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2709517
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c962775c7047797429ee66931ae9f40d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 13.39
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c962775c7047797429ee66931ae9f40d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.581985
+      value: 38.46
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c962775c7047797429ee66931ae9f40d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -674,6 +674,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: -1
   m_Mesh: {fileID: 4300000, guid: c962775c7047797429ee66931ae9f40d, type: 3}
+--- !u!114 &1602006368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602006366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3997ade735fc324d933380749c0f18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!114 &1602006369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602006366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42935b30dc7ba7941a41a2ff82004e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballsToDrop: 10
+  ball_model: {fileID: 7207845826962121285, guid: 5e95e4d138c445a42b08d6226a397095,
+    type: 3}
+  spawnHeight: 10
+  dropZoneDimensions: {x: -10, y: 10, z: -20, w: 20}
 --- !u!135 &1602006371
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -700,12 +730,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0.1
-  rotationSpeed: 0.1
+  rotationSpeed: 100
   minX: -10
   maxX: 10
-  state: 3
+  state: 1
   probabilityOfDirectionChange: 1
-  radius: 4
+  radius: 10
   goingLeft: 0
   rotate: 0
 --- !u!1 &1916799055
