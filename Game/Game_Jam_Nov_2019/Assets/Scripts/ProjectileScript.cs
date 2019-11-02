@@ -23,7 +23,7 @@ public class ProjectileScript : MonoBehaviour
     {
         if (_currLifespan <= 0)
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
         else
         {
