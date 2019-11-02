@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinState : MonoBehaviour
 {
-    public float score;
+    public int score;
     public Vector3 scoreCenter;
     public Vector3 scoreSize;
     // Start is called before the first frame update

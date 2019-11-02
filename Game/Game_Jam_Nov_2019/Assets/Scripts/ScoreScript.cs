@@ -13,16 +13,21 @@ public class ScoreScript : MonoBehaviour
     int player2Score;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //Grab the total balls on each side of the field  
         updateScore();
     }
 
+    void Update()
+    {
+        updateScore();
+    }
+
   public void updateScore()
     {
-        player1Score = GameObject.Find("Goal (1)").GetComponent<Ball_Goal_Collide>().score;
-        player2Score = GameObject.Find("Goal (2)").GetComponent<Ball_Goal_Collide>().score;
+        player1Score = GameObject.Find("BlueArea").GetComponent<WinState>().score;
+        player2Score = GameObject.Find("RedArea").GetComponent<WinState>().score;
 
         player1Text.text = player1Score.ToString();
         player2Text.text = player2Score.ToString();
