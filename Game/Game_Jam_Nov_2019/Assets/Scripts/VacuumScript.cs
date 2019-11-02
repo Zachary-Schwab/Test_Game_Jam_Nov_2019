@@ -8,16 +8,16 @@ public class VacuumScript : MonoBehaviour
     public bool canSuck = false;
     public float cooldown;
     public int ammo = 0;
-
    public float currentCooldown;
 
-    AmmoScript ammoScript;
+    public KeyCode suckKey;
+    public AmmoScript ammoScript;
 
     // Start is called before the first frame update
     void Start()
     {
         currentCooldown = cooldown;
-        ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
+       // ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
     }
 
     // Update is called once per frame
@@ -28,12 +28,12 @@ public class VacuumScript : MonoBehaviour
 
     void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(suckKey))
         {
             canSuck = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(suckKey))
         {
             canSuck = false;
         }
@@ -43,7 +43,7 @@ public class VacuumScript : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (canSuck && collider.gameObject.tag == "Ball")
+        if (canSuck && collider.gameObject.tag == "ball")
         {
             currentCooldown -= Time.deltaTime;
 

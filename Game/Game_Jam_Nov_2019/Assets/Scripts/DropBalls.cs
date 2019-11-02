@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropBalls : MonoBehaviour
 {
-    public int ballsToDrop = 10;
+    public int ballsToDrop = 100;
     public GameObject ball_model;
     public float spawnHeight = 5f;
     public Vector4 dropZoneDimensions;
@@ -17,7 +17,6 @@ public class DropBalls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     public void DropBall()
     {

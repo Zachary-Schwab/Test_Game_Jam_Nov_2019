@@ -16,14 +16,17 @@ public class AimingScript : MonoBehaviour
 
     public GameObject _projectilePrefab;
 
-    AmmoScript ammoScript;
+    public AmmoScript ammoScript;
+    public KeyCode turretTurnLeft;
+    public KeyCode turretTurnRight;
+    public KeyCode fire;
 
     // Start is called before the first frame update
     void Start()
     {
         _angle = 90 -_angleRange;
         input = transform.rotation.eulerAngles.z;
-        ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
+       // ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class AimingScript : MonoBehaviour
         Rotate();
 
         TickFiringCooldown();
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(fire))
         {
             TryFire();
         }
@@ -40,8 +43,8 @@ public class AimingScript : MonoBehaviour
 
     void Rotate()
     {
-        bool u = Input.GetKey(KeyCode.U);
-        bool o = Input.GetKey(KeyCode.O);
+        bool u = Input.GetKey(turretTurnLeft);
+        bool o = Input.GetKey(turretTurnRight);
 
         if(o)
         {

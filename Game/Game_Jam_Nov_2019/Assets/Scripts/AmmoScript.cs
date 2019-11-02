@@ -8,12 +8,12 @@ public class AmmoScript : MonoBehaviour
     public int maxAmmo;
 
 
-    AmmoTextScript ammoText;
+    public AmmoTextScript ammoText;
     // Start is called before the first frame update
     void Start()
     {
         ammoCount = 0;
-        ammoText = GameObject.Find("Ammo_Canvas").GetComponent<AmmoTextScript>();
+       // ammoText = GameObject.Find("Ammo_Canvas").GetComponent<AmmoTextScript>();
     }
 
     public bool addAmmo()

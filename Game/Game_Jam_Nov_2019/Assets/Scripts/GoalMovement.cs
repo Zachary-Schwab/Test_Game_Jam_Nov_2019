@@ -85,4 +85,15 @@ public class GoalMovement : MonoBehaviour
                 break;
         }
     }
+    public void CheckState(int score)
+    {
+        if (score > 5)
+        {
+            state = 2;
+        }
+        if (score > 12)
+        {
+            state = 3;
+        }
+    }
 }

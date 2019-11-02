@@ -9,12 +9,12 @@ public class AmmoTextScript : MonoBehaviour
     public Text ones;
     public Text tens;
 
-    AmmoScript ammoScript;
+    public AmmoScript ammoScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
+        //ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
         updateAmmoCount();
     }
 
@@ -23,7 +23,7 @@ public class AmmoTextScript : MonoBehaviour
         if (ammoScript.ammoCount >= 10)
         {
             tens.text = "1";
-            ones.text = (ammoScript.ammoCount - 1).ToString();
+            ones.text = "0";
         }
         else
         {

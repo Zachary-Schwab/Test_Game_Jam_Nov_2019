@@ -23,6 +23,7 @@ public class Ball_Goal_Collide : MonoBehaviour
             Destroy(collision.gameObject);
             score++;
             this.gameObject.GetComponent<DropBalls>().DropBall();
+            this.gameObject.GetComponent<GoalMovement>().CheckState(score);
         }
     }
 }

@@ -8,6 +8,9 @@ public class MovementScript : MonoBehaviour
     public float _movementSpeed = 1.0f;
     public float _rotateSpeed = 12.0f;
 
+    public KeyCode moveRight;
+    public KeyCode moveLeft;
+    public string verticalAxis;
     bool IsMoving { get { return _rb.velocity != Vector3.zero; } }
 
     //float rotDir = 0; //-1 = CW, 1 = CCW
@@ -36,8 +39,8 @@ public class MovementScript : MonoBehaviour
             bool turnLeft = false;
             bool turnRight = false;
 
-            turnLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
-            turnRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+            turnLeft = Input.GetKey(moveLeft);
+            turnRight = Input.GetKey(moveRight);
 
             rotDir += turnLeft ? 0 : 1;
             rotDir -= turnRight ? 0 : 1;
@@ -50,7 +53,7 @@ public class MovementScript : MonoBehaviour
 
     void Move()
     {
-        float vertInput = Input.GetAxis("Vertical");
+        float vertInput = Input.GetAxis(verticalAxis);
 
         _rb.velocity = transform.forward * vertInput * _movementSpeed;
         //_rb.velocity = new Vector3(vertInput * _movementSpeed * 10f * Time.deltaTime, 0f, 0f);
