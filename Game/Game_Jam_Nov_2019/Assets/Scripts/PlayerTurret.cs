@@ -9,9 +9,9 @@ public class PlayerTurret : MonoBehaviour
     public float _turningDegreesPerSecond;
     float input;
 
-    public KeyCode iKey;
+    //public KeyCode iKey;
     public KeyCode jKey;
-    public KeyCode kKey;
+   // public KeyCode kKey;
     public KeyCode lKey;
     // Start is called before the first frame update
     void Start()
@@ -27,9 +27,9 @@ public class PlayerTurret : MonoBehaviour
 
     private void Rotate()
     {
-        bool i = Input.GetKey(iKey);
+        //bool i = Input.GetKey(iKey);
         bool j = Input.GetKey(jKey);
-        bool k = Input.GetKey(kKey);
+       // bool k = Input.GetKey(kKey);
         bool l = Input.GetKey(lKey);
         //if (i || j || k || l)
         //{
