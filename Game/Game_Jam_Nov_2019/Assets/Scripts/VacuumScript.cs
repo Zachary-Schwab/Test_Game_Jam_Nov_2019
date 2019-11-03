@@ -43,7 +43,7 @@ public class VacuumScript : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (canSuck && collider.gameObject.tag == "ball")
+        if (collider.gameObject.tag == "ball")
         {
             currentCooldown -= Time.deltaTime;
 
