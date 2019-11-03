@@ -8,6 +8,7 @@ public class Ball_Goal_Collide : MonoBehaviour
 
     ScoreScript scoreScript1;
     ScoreScript scoreScript2;
+    public GameObject goalParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +25,14 @@ public class Ball_Goal_Collide : MonoBehaviour
     {
         if(collision.gameObject.tag == "Shootable")
         {
-            this.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
+            this.gameObject.GetComponent<AudioSource>().Play();
+            this.goalParticle.GetComponent<ParticleSystem>().Play();
             //Destroy(collision.gameObject);
             score++;
             scoreScript1.updateScore();
             scoreScript2.updateScore();
-            this.gameObject.transform.parent.gameObject.GetComponent<DropBalls>().DropBall();
-            this.gameObject.transform.parent.gameObject.GetComponent<GoalMovement>().CheckState(score);
+            this.gameObject.GetComponent<DropBalls>().DropBall();
+            this.gameObject.GetComponent<GoalMovement>().CheckState(score);
         }
     }
 }

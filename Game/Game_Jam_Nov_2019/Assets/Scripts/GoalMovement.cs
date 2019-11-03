@@ -13,7 +13,8 @@ public class GoalMovement : MonoBehaviour
     public float radius = 4;
     public bool goingLeft;
     public bool rotate;
-    float c;
+    public float c;
+    public float distance;
     Vector3 startPos;
     // Start is called before the first frame update
     void Start()
@@ -63,8 +64,8 @@ public class GoalMovement : MonoBehaviour
                 }
             break;
         case 3:
-                float distance = Mathf.Abs(c - transform.position.x);
-                if(Mathf.Abs(distance - radius) <= movementSpeed && distance > radius - movementSpeed)
+                distance = Mathf.Abs(c - transform.position.x);
+                if(Mathf.Abs(distance - radius) <= movementSpeed/2 && distance > radius - movementSpeed)
                 {
                     rotate = true;
                 }
@@ -87,11 +88,11 @@ public class GoalMovement : MonoBehaviour
     }
     public void CheckState(int score)
     {
-        if (score > 5)
+        if (score > 10)
         {
             state = 2;
         }
-        if (score > 12)
+        if (score > 35)
         {
             state = 3;
         }
