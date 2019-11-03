@@ -55,7 +55,7 @@ public class MovementScript : MonoBehaviour
     {
         float vertInput = Input.GetAxis(verticalAxis);
 
-        if(vertInput > 0)
+        if(vertInput != 0)
         {
             _rb.velocity = transform.forward * vertInput * _movementSpeed;
         }
