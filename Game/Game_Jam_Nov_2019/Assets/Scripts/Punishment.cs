@@ -54,6 +54,16 @@ public class Punishment : MonoBehaviour
             }
         }
         this.gameObject.GetComponent<AudioSource>().Play();
-        this.transform.parent.gameObject.SetActive(false);
+        foreach(Transform child in transform.parent)
+        {
+            if(child.name != "ring")
+                child.GetComponent<MeshRenderer>().enabled = false;
+            else
+            {
+                child.GetComponent<MeshCollider>().enabled = false;
+            }
+        }
+
+        
     }
 }

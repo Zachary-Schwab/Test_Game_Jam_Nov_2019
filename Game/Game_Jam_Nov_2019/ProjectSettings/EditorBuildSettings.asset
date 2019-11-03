@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainGame/First_Single_Player_Test.unity
-    guid: eead77bfe5bb1f641a5c91184a193e70
+    path: Assets/Scenes/MainGame/Title_Screen.unity
+    guid: a6661293b444b8c40bfaee913c721577
   - enabled: 1
     path: Assets/Scenes/MainGame/How_To_Play.unity
     guid: 018a1d12b042bb940af03f54712d9ead
   - enabled: 1
-    path: Assets/Scenes/MainGame/Title_Screen.unity
-    guid: a6661293b444b8c40bfaee913c721577
+    path: Assets/Scenes/MainGame/First_Single_Player_Test.unity
+    guid: eead77bfe5bb1f641a5c91184a193e70
   m_configObjects: {}

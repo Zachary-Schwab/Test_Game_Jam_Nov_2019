@@ -17,7 +17,15 @@ public class GoldenBallTargetOnOff : MonoBehaviour
     {
         foreach(GameObject target in targets)
         {
-            target.SetActive(false);
+            foreach (Transform child in target.transform)
+            {
+                if (child.name != "ring")
+                    child.GetComponent<MeshRenderer>().enabled = false;
+                else if (child.name == "ring")
+                {
+                    child.GetComponent<MeshCollider>().enabled = false;
+                }
+            }
         }
         currentTimeAlive = -respawnTimer;
     }
@@ -30,13 +38,31 @@ public class GoldenBallTargetOnOff : MonoBehaviour
         if (currentTimer > respawnTimer)
         {
             currentAlive = targets[Random.Range(0, targets.Length - 1)];
-            currentAlive.SetActive(true);
+            foreach (Transform child in currentAlive.transform)
+            {
+                if (child.name != "ring")
+                    child.GetComponent<MeshRenderer>().enabled = true;
+                else if (child.name == "ring")
+                {
+                    child.GetComponent<MeshCollider>().enabled = true;
+                }
+            }
+
             currentTimer = -timeAlive;
             currentTimeAlive = 0;
         }
         if (currentTimeAlive > timeAlive)
         {
-            currentAlive.SetActive(false);
+            foreach (Transform child in currentAlive.transform)
+            {
+
+                if (child.name != "ring")
+                    child.GetComponent<MeshRenderer>().enabled = false;
+                else if (child.name == "ring")
+                {
+                    child.GetComponent<MeshCollider>().enabled = false;
+                }
+            }
             currentTimer = 0;
             currentTimeAlive = -respawnTimer;
         }
