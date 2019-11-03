@@ -5,9 +5,9 @@ using UnityEngine;
 public class inflateBall : MonoBehaviour
 {
     public Vector3 maxScale;
+    public float inflationSpeed;
 
-
-    bool shouldInflate;
+    public bool shouldInflate;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,8 @@ public class inflateBall : MonoBehaviour
 
     void Inflate()
     {
-        Vector3 time = new Vector3(Time.deltaTime, Time.deltaTime, Time.deltaTime);
+        
+        Vector3 time = new Vector3(Time.deltaTime* inflationSpeed, Time.deltaTime * inflationSpeed, Time.deltaTime * inflationSpeed);
 
         transform.localScale += time;
     }

@@ -95,6 +95,7 @@ public class AimingScript : MonoBehaviour
     public void EMP(float delay)
     {
         Debug.Log("delay");
+        this.gameObject.GetComponent<AudioSource>().Play();
         _firingCooldown = delay;
     }
 

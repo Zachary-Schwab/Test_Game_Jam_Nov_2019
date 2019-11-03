@@ -19,6 +19,7 @@ public class GoldenBallTargetOnOff : MonoBehaviour
         {
             target.SetActive(false);
         }
+        currentTimeAlive = -respawnTimer;
     }
 
     // Update is called once per frame
@@ -30,14 +31,14 @@ public class GoldenBallTargetOnOff : MonoBehaviour
         {
             currentAlive = targets[Random.Range(0, targets.Length - 1)];
             currentAlive.SetActive(true);
-            currentTimer = -10;
+            currentTimer = -timeAlive;
             currentTimeAlive = 0;
         }
         if (currentTimeAlive > timeAlive)
         {
             currentAlive.SetActive(false);
             currentTimer = 0;
-            currentTimeAlive = -15;
+            currentTimeAlive = -respawnTimer;
         }
     }
 }

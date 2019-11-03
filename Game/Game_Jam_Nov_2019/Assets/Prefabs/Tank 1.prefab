@@ -188,6 +188,44 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651718343810765600}
   m_Enabled: 1
+--- !u!114 &1651718344449320380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651718343992249892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c501d42d462b74dbb0a3ec41b26edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turningDegreesPerSecond: 20
+  _angleRange: 10
+  _fireRate: 10
+  _firingCooldown: 0
+  _spread: 0
+  _projectilePrefab: {fileID: 2922526423391767642, guid: 092acf72479ccdb4ca27429d64eeb74d,
+    type: 3}
+  ammoScript: {fileID: 1651718344449320381}
+  turretTurnLeft: 105
+  turretTurnRight: 107
+  fire: 32
+--- !u!114 &1651718344449320381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651718343992249892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31163947d9dda8546b39e490f9834edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoCount: 0
+  maxAmmo: 10
+  ammoText: {fileID: 1651718345067000800}
 --- !u!1 &1651718344404075950
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,43 +303,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 0
---- !u!114 &1651718344449320380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651718343992249892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c501d42d462b74dbb0a3ec41b26edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turningDegreesPerSecond: 20
-  _angleRange: 10
-  _fireRate: 10
-  _spread: 0
-  _projectilePrefab: {fileID: 7207845826962121285, guid: 5149d147cf77dc1409aabee42fc2a010,
-    type: 3}
-  ammoScript: {fileID: 1651718344449320381}
-  turretTurnLeft: 105
-  turretTurnRight: 107
-  fire: 32
---- !u!114 &1651718344449320381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651718343992249892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31163947d9dda8546b39e490f9834edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoCount: 0
-  maxAmmo: 10
-  ammoText: {fileID: 1651718345067000800}
 --- !u!1 &1651718344550827673
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class VacuumScript : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (collider.gameObject.tag == "ball")
+        if (collider.gameObject.tag == "Shootable")
         {
             currentCooldown -= Time.deltaTime;
 
@@ -51,6 +51,7 @@ public class VacuumScript : MonoBehaviour
             {
                 if (ammoScript.addAmmo())
                 {
+                    this.gameObject.GetComponent<AudioSource>().Play();
                     Destroy(collider.gameObject);
                     resetValues();
                 }

@@ -22,9 +22,10 @@ public class Ball_Goal_Collide : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "ball")
+        if(collision.gameObject.tag == "Shootable")
         {
-            Destroy(collision.gameObject);
+            this.gameObject.GetComponent<AudioSource>().Play();
+            //Destroy(collision.gameObject);
             score++;
             scoreScript1.updateScore();
             scoreScript2.updateScore();
