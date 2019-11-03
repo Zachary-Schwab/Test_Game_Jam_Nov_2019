@@ -16,4 +16,14 @@ public class ButtonScript : MonoBehaviour
         SceneManager.LoadScene("First_Single_Player_Test");
     }
 
+    public void swapToTitle()
+    {
+        SceneManager.LoadScene("Title_Screen");
+    }
+
+    public void RestartGame()
+    {
+        Debug.Log("restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
