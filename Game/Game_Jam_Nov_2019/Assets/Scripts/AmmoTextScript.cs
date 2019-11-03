@@ -2,28 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AmmoTextScript : MonoBehaviour
 {
-
-    public Text ones;
-    public Text tens;
+    public TextMeshProUGUI ones;
+    public TextMeshProUGUI tens;
 
     public AmmoScript ammoScript;
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        //ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
         updateAmmoCount();
     }
 
-   public void updateAmmoCount()
+    public void updateAmmoCount()
     {
         if (ammoScript.ammoCount >= 10)
         {
-            tens.text = "1";
-            ones.text = "0";
+            tens.text = (ammoScript.ammoCount / 10).ToString();
+            ones.text = (ammoScript.ammoCount % 10).ToString();
         }
         else
         {

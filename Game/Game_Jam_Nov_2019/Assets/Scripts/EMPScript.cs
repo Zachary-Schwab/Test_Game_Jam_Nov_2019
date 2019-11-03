@@ -40,17 +40,14 @@ public class EMPScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.name == "Tank")
         {
-            if (col.gameObject.name == "Tank")
-            {
-                player2.GetComponent<AimingScript>().EMP(empStunTime);
-            }
-            else if (col.gameObject.name == "Tank2")
-            {
-                player1.GetComponent<AimingScript>().EMP(empStunTime);
-            }
-
+            player2.GetComponent<AimingScript>().EMP(empStunTime);
+            Destroy(gameObject);
+        }
+        else if (col.gameObject.name == "TankEditBase")
+        {
+            player1.GetComponent<AimingScript>().EMP(empStunTime);
             Destroy(gameObject);
         }
     }

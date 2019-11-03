@@ -22,7 +22,7 @@ public class Punishment : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Colllision detected with death coins");
-        if(this.transform.parent.gameObject.tag == "Red")
+        if(this.transform.parent.gameObject.tag == "Blue")
         {
             Debug.Log("tagRead");
             Collider[] collidingObjects = Physics.OverlapBox(redState.scoreCenter, redState.scoreSize / 2, Quaternion.identity);
@@ -38,7 +38,7 @@ public class Punishment : MonoBehaviour
                 }
             }
         }
-        if (this.transform.parent.gameObject.tag == "Blue")
+        if (this.transform.parent.gameObject.tag == "Red")
         {
             Collider[] collidingObjects = Physics.OverlapBox(blueState.scoreCenter, blueState.scoreSize / 2, Quaternion.identity);
             if (collidingObjects != null && collidingObjects.Length > 0)

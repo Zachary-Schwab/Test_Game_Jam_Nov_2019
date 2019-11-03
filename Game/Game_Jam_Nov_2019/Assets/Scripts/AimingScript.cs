@@ -21,11 +21,15 @@ public class AimingScript : MonoBehaviour
     public KeyCode turretTurnRight;
     public KeyCode fire;
 
+    public Canvas ammoCanvas;
+    public GameObject empParticle;
+
     // Start is called before the first frame update
     void Start()
     {
         _angle = 90 - _angleRange;
         input = transform.rotation.eulerAngles.z;
+        empParticle.GetComponent<ParticleSystem>().Stop();
         // ammoScript = GameObject.Find("Tank_Gun").GetComponent<AmmoScript>();
     }
 
@@ -80,6 +84,14 @@ public class AimingScript : MonoBehaviour
     private void TickFiringCooldown()
     {
         _firingCooldown -= Time.deltaTime;
+
+        if (_firingCooldown <= 0)
+        {
+            if (empParticle.GetComponent<ParticleSystem>().isPlaying)
+            {
+                empParticle.GetComponent<ParticleSystem>().Stop();
+            }
+        }
     }
 
     private void Fire()
@@ -94,9 +106,9 @@ public class AimingScript : MonoBehaviour
 
     public void EMP(float delay)
     {
-        Debug.Log("delay");
         this.gameObject.GetComponent<AudioSource>().Play();
         _firingCooldown = delay;
+        empParticle.GetComponent<ParticleSystem>().Play();
     }
 
 }

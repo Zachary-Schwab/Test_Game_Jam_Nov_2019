@@ -7,6 +7,7 @@ public class MovementScript : MonoBehaviour
     Rigidbody _rb;
     public float _movementSpeed = 1.0f;
     public float _rotateSpeed = 12.0f;
+    float vertInput = 0f;
 
     public KeyCode moveRight;
     public KeyCode moveLeft;
@@ -33,7 +34,7 @@ public class MovementScript : MonoBehaviour
 
     private void TryRotate()
     {
-        if (IsMoving)
+        if (IsMoving && vertInput != 0f)
         {
             float rotDir = 0; //-1 = CW, 1 = CCW
             bool turnLeft = false;
@@ -53,7 +54,7 @@ public class MovementScript : MonoBehaviour
 
     void Move()
     {
-        float vertInput = Input.GetAxis(verticalAxis);
+        vertInput = Input.GetAxis(verticalAxis);
 
         if(vertInput != 0 && transform.position.y < 40)
         {

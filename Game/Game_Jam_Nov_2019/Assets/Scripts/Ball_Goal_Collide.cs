@@ -24,13 +24,13 @@ public class Ball_Goal_Collide : MonoBehaviour
     {
         if(collision.gameObject.tag == "Shootable")
         {
-            this.gameObject.GetComponent<AudioSource>().Play();
+            this.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
             //Destroy(collision.gameObject);
             score++;
             scoreScript1.updateScore();
             scoreScript2.updateScore();
-            this.gameObject.GetComponent<DropBalls>().DropBall();
-            this.gameObject.GetComponent<GoalMovement>().CheckState(score);
+            this.gameObject.transform.parent.gameObject.GetComponent<DropBalls>().DropBall();
+            this.gameObject.transform.parent.gameObject.GetComponent<GoalMovement>().CheckState(score);
         }
     }
 }

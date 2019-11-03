@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3906edeab3a51e543b5085e66a1df4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
+  cooldown: 30
   empStunTime: 10
 --- !u!136 &136197998611896716
 CapsuleCollider:

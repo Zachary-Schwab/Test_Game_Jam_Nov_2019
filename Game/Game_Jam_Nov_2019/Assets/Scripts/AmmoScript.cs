@@ -16,13 +16,13 @@ public class AmmoScript : MonoBehaviour
        // ammoText = GameObject.Find("Ammo_Canvas").GetComponent<AmmoTextScript>();
     }
 
-    public bool addAmmo()
+    public bool addAmmo(int ammo = 1)
     {
         bool boolean;
 
         if(ammoCount < maxAmmo)
         {
-            ammoCount++;
+            ammoCount+= ammo;
             boolean = true;
         }
         else
