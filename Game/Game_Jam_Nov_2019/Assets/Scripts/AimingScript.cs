@@ -11,7 +11,7 @@ public class AimingScript : MonoBehaviour
     float input;
 
     public float _fireRate;
-    float _firingCooldown = 0;
+    public float _firingCooldown = 0;
     public float _spread;
 
     public GameObject _projectilePrefab;
@@ -94,6 +94,7 @@ public class AimingScript : MonoBehaviour
 
     public void EMP(float delay)
     {
+        Debug.Log("delay");
         _firingCooldown = delay;
     }
 

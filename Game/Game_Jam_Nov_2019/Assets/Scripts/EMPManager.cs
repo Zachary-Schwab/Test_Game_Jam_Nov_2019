@@ -6,8 +6,9 @@ public class EMPManager : MonoBehaviour
 {
     public float spawningCooldown;
     float currentCooldown;
-    GameObject[] positions;
-
+   public GameObject[] positionsP1;
+   public GameObject[] positionsP2;
+    public GameObject EMP;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +36,11 @@ public class EMPManager : MonoBehaviour
 
     void spawnEMP()
     {
-        //Gen random position
-        //EMP = Instantiate(Gameobject, rand_position, rotation)
-        //EMP will update its own cooldown
+        int pos1 = Random.Range(0, positionsP1.Length);
+        int pos2 = Random.Range(0, positionsP2.Length);
+
+        Instantiate(EMP, positionsP1[pos1].transform.position, transform.rotation);
+        Instantiate(EMP, positionsP2[pos2].transform.position, transform.rotation);
     }
 
 }
