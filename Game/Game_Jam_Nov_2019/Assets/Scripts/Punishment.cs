@@ -21,49 +21,50 @@ public class Punishment : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Colllision detected with death coins");
-        if(this.transform.parent.gameObject.tag == "Blue")
+        if (collision.gameObject.tag == "Shootable")
         {
-            Debug.Log("tagRead");
-            Collider[] collidingObjects = Physics.OverlapBox(redState.scoreCenter, redState.scoreSize / 2, Quaternion.identity);
-            if (collidingObjects != null && collidingObjects.Length > 0)
+            Debug.Log("Colllision detected with death coins");
+            if (this.transform.parent.gameObject.tag == "Blue")
             {
-                foreach (Collider collider in collidingObjects)
+                Debug.Log("tagRead");
+                Collider[] collidingObjects = Physics.OverlapBox(redState.scoreCenter, redState.scoreSize / 2, Quaternion.identity);
+                if (collidingObjects != null && collidingObjects.Length > 0)
                 {
-                    if (collider.gameObject.tag == "Shootable")
+                    foreach (Collider collider in collidingObjects)
                     {
-                        Destroy(collider.gameObject);
-                        break;
+                        if (collider.gameObject.tag == "Shootable")
+                        {
+                            Destroy(collider.gameObject);
+                            break;
+                        }
                     }
                 }
             }
-        }
-        if (this.transform.parent.gameObject.tag == "Red")
-        {
-            Collider[] collidingObjects = Physics.OverlapBox(blueState.scoreCenter, blueState.scoreSize / 2, Quaternion.identity);
-            if (collidingObjects != null && collidingObjects.Length > 0)
+            if (this.transform.parent.gameObject.tag == "Red")
             {
-                foreach (Collider collider in collidingObjects)
+                Collider[] collidingObjects = Physics.OverlapBox(blueState.scoreCenter, blueState.scoreSize / 2, Quaternion.identity);
+                if (collidingObjects != null && collidingObjects.Length > 0)
                 {
-                    if (collider.gameObject.tag == "Shootable")
+                    foreach (Collider collider in collidingObjects)
                     {
-                        Destroy(collider.gameObject);
-                        break;
+                        if (collider.gameObject.tag == "Shootable")
+                        {
+                            Destroy(collider.gameObject);
+                            break;
+                        }
                     }
                 }
             }
-        }
-        this.gameObject.GetComponent<AudioSource>().Play();
-        foreach(Transform child in transform.parent)
-        {
-            if(child.name != "ring")
-                child.GetComponent<MeshRenderer>().enabled = false;
-            else
+            this.gameObject.GetComponent<AudioSource>().Play();
+            foreach (Transform child in transform.parent)
             {
-                child.GetComponent<MeshCollider>().enabled = false;
+                if (child.name != "ring")
+                    child.GetComponent<MeshRenderer>().enabled = false;
+                else
+                {
+                    child.GetComponent<MeshCollider>().enabled = false;
+                }
             }
         }
-
-        
     }
 }

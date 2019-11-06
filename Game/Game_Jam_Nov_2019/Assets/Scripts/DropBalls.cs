@@ -25,7 +25,7 @@ public class DropBalls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //DropBall();
     }
     public void DropBall()
     {
